@@ -22,7 +22,8 @@ class Hall(Star_Cinema):
         self.seats[__id] = lst
 
     def book_seat(self, __id, seat_no):
-        print(self.show_list[__id])
+        if __id < len(self.show_list):
+            print(self.show_list[__id])
         if seat_no[0] < 0 or seat_no[0] >= self.__rows or seat_no[1] < 0 or seat_no[1] >= self.__cols:
             print('Invalid seat')
             return
@@ -40,7 +41,8 @@ class Hall(Star_Cinema):
             print(show)
 
     def view_available_seats(self, __id):
-        print(self.show_list[__id])
+        if __id < len(self.show_list):
+            print(self.show_list[__id])
         if __id in self.seats:
             for i in range(self.__rows):
                 for j in range(self.__cols):
